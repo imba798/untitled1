@@ -9,24 +9,24 @@
 #include <unistd.h>
 
 
-using namespace  cv;
-using namespace std;
+//using namespace  cv;
+//using namespace std;
 
-Mat frame;
+cv::Mat frame;
 int finished = 0;
 
 void show_img()
 {
-    namedWindow("output");
-    static double timer = (double)getTickCount();
+    cv::namedWindow("output");
+    static double timer = (double)cv::getTickCount();
     while (1){
 
         if (finished == 1){
-            float fps = getTickFrequency() / ((double)getTickCount() - timer);
-            putText(frame, "FPS : " + to_string(int(fps)), Point(400,50), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(150,170,50), 2);
+            float fps = cv::getTickFrequency() / ((double)cv::getTickCount() - timer);
+            putText(frame, "FPS : " + std::to_string(int(fps)), cv::Point(400,50), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(150,170,50), 2);
             imshow("Tracking", frame);
-            int k = waitKey(100);
-            timer = (double)getTickCount();
+            int k = cv::waitKey(100);
+            timer = (double)cv::getTickCount();
             if(k == 27)
             {
                 break;
@@ -53,7 +53,7 @@ int main() {
 //    tracker = legacy::upgradeTrackingAPI(legacy::TrackerMOSSE::create());
 
 
-    VideoCapture capture;
+    cv::VideoCapture capture;
 
     frame = capture.open("/home/chenyl/CLionProjects/untitled1/output_test_1122.avi");
     if(!capture.isOpened()){
@@ -65,12 +65,12 @@ int main() {
     bool ok = capture.read(frame);
 
     int start = 0;
-    Rect bbox;
-    thread th1(show_img);
+    cv::Rect bbox;
+    std::thread th1(show_img);
     th1.detach();
     while (capture.read(frame)){
         finished = 0;
-        double timer = (double)getTickCount();
+        double timer = (double)cv::getTickCount();
         usleep(5000);
 //        if (start == 1){
 //            bool ok = tracker->update(frame, bbox);
@@ -99,8 +99,8 @@ int main() {
 
 
 //        printf("Read one frame ...\n");
-        float fps = getTickFrequency() / ((double)getTickCount() - timer);
-        putText(frame, "FPS : " + to_string(int(fps)), Point(100,50), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(50,170,50), 2);
+        float fps = cv::getTickFrequency() / ((double)cv::getTickCount() - timer);
+        putText(frame, "FPS : " + std::to_string(int(fps)), cv::Point(100,50), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(50,170,50), 2);
         finished = 1;
     }
     capture.release();

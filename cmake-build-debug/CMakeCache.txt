@@ -15,7 +15,7 @@
 ########################
 
 //Path to a library.
-C10_CUDA_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/lib/libc10_cuda.so
+C10_CUDA_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/lib/libc10_cuda.so
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -280,9 +280,6 @@ CUDA_NVCC_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a library.
 CUDA_NVRTC_LIB:FILEPATH=/usr/local/cuda/lib64/libnvrtc.so
 
-//"OpenCL" library
-CUDA_OpenCL_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libOpenCL.so
-
 //Propagate C/CXX_FLAGS and friends to the host compiler via -Xcompile
 CUDA_PROPAGATE_HOST_FLAGS:BOOL=ON
 
@@ -338,9 +335,6 @@ CUDA_cusparse_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcusparse.so
 //"nppc" library
 CUDA_nppc_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libnppc.so
 
-//"nppi" library
-CUDA_nppi_LIBRARY:FILEPATH=CUDA_nppi_LIBRARY-NOTFOUND
-
 //"nppial" library
 CUDA_nppial_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libnppial.so
 
@@ -374,12 +368,6 @@ CUDA_nppitc_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libnppitc.so
 //"npps" library
 CUDA_npps_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libnpps.so
 
-//"nvToolsExt" library
-CUDA_nvToolsExt_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libnvToolsExt.so
-
-//Path to a library.
-CUDA_rt_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
-
 //Folder containing NVIDIA cuDNN header files
 CUDNN_INCLUDE_DIR:PATH=
 
@@ -399,7 +387,7 @@ CUDNN_ROOT:PATH=
 CUDNN_STATIC:BOOL=OFF
 
 //The directory containing a CMake configuration file for Caffe2.
-Caffe2_DIR:PATH=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2
+Caffe2_DIR:PATH=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2
 
 //Path to a library.
 LIBNVTOOLSEXT:FILEPATH=/usr/local/cuda/lib64/libnvToolsExt.so
@@ -410,12 +398,6 @@ MKLDNN_DIR:PATH=MKLDNN_DIR-NOTFOUND
 //The directory containing a CMake configuration file for MKL.
 MKL_DIR:PATH=MKL_DIR-NOTFOUND
 
-//The directory containing a CMake configuration file for OpenCV4.
-OpenCV4_DIR:PATH=OpenCV4_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
-
 //Path to a program.
 ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 
@@ -423,16 +405,16 @@ ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
 
 //Path to a library.
-TORCH_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/lib/libtorch.so
+TORCH_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/lib/libtorch.so
 
 //The directory containing a CMake configuration file for Torch.
-Torch_DIR:PATH=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Torch
+Torch_DIR:PATH=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Torch
 
 //Path to a library.
-c10_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/lib/libc10.so
+c10_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/lib/libc10.so
 
 //Path to a library.
-kineto_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/lib/libkineto.a
+kineto_LIBRARY:FILEPATH=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/lib/libkineto.a
 
 //Value Computed by CMake
 untitled1_BINARY_DIR:STATIC=/home/chenyl/CLionProjects/untitled1/cmake-build-debug
@@ -634,8 +616,6 @@ CUDA_NVCC_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CUDA_NVCC_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_NVCC_FLAGS_RELWITHDEBINFO
 CUDA_NVCC_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_OpenCL_LIBRARY
-CUDA_OpenCL_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_PROPAGATE_HOST_FLAGS
 CUDA_PROPAGATE_HOST_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_PROPAGATE_HOST_FLAGS_BLACKLIST
@@ -676,11 +656,9 @@ CUDA_cusolver_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_cusparse_LIBRARY
 CUDA_cusparse_LIBRARY-ADVANCED:INTERNAL=1
 //Location of make2cmake.cmake
-CUDA_make2cmake:INTERNAL=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/make2cmake.cmake
+CUDA_make2cmake:INTERNAL=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/make2cmake.cmake
 //ADVANCED property for variable: CUDA_nppc_LIBRARY
 CUDA_nppc_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_nppi_LIBRARY
-CUDA_nppi_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nppial_LIBRARY
 CUDA_nppial_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nppicc_LIBRARY
@@ -703,12 +681,10 @@ CUDA_nppisu_LIBRARY-ADVANCED:INTERNAL=1
 CUDA_nppitc_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_npps_LIBRARY
 CUDA_npps_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDA_nvToolsExt_LIBRARY
-CUDA_nvToolsExt_LIBRARY-ADVANCED:INTERNAL=1
 //Location of parse_cubin.cmake
-CUDA_parse_cubin:INTERNAL=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/parse_cubin.cmake
+CUDA_parse_cubin:INTERNAL=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/parse_cubin.cmake
 //Location of run_nvcc.cmake
-CUDA_run_nvcc:INTERNAL=/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/run_nvcc.cmake
+CUDA_run_nvcc:INTERNAL=/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/run_nvcc.cmake
 //ADVANCED property for variable: CUDNN_INCLUDE_DIR
 CUDNN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDNN_LIBRARY
@@ -720,11 +696,11 @@ FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda][/usr/local/cuda/bin
 //Details about finding CUDNN
 FIND_PACKAGE_MESSAGE_DETAILS_CUDNN:INTERNAL=[/usr/local/cuda/lib64/libcudnn.so][/usr/local/cuda/include][v()]
 //Details about finding OpenCV
-FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.5.3(4)]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/home/chenyl/opencv/build][v4.5.3(4)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding Torch
-FIND_PACKAGE_MESSAGE_DETAILS_Torch:INTERNAL=[/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/lib/libtorch.so][/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/include;/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/include/torch/csrc/api/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_Torch:INTERNAL=[/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/lib/libtorch.so][/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/include;/home/chenyl/Downloads/libtorch-cxx11-abi-shared-with-deps-1.10.0+cu113/libtorch/include/torch/csrc/api/include][v()]
 //ADVANCED property for variable: ProcessorCount_cmd_nproc
 ProcessorCount_cmd_nproc-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
