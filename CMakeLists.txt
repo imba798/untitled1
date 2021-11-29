@@ -8,8 +8,8 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(untitled1 main.cpp)
 #add_executable(untitled1 version.cpp)
 
-set(OpenCV_DIR "/home/chenyl/opencv/build")
-#set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")
+#set(OpenCV_DIR "/home/chenyl/opencv/build")
+set(OpenCV_DIR "/usr/local/lib/cmake/opencv4")
 
 find_package(OpenCV 4 REQUIRED)
 

@@ -31,9 +31,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Caffe2/public/utils.cmake"
   "/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Torch/TorchConfig.cmake"
   "/home/chenyl/Downloads/libtorch-shared-with-deps-1.10.0+cu113/libtorch/share/cmake/Torch/TorchConfigVersion.cmake"
-  "/home/chenyl/opencv/build/OpenCVConfig-version.cmake"
-  "/home/chenyl/opencv/build/OpenCVConfig.cmake"
-  "/home/chenyl/opencv/build/OpenCVModules.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCInformation.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCXXInformation.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake"
@@ -51,6 +48,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU-C.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU-CXX.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU.cmake"
+  "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindCUDA.cmake"
+  "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindCUDA/select_compute_arch.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindThreads.cmake"
@@ -61,6 +60,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/Platform/Linux.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/Platform/UnixPaths.cmake"
   "/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/ProcessorCount.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVConfig.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVModules.cmake"
   )
 
 # The corresponding makefile is:
