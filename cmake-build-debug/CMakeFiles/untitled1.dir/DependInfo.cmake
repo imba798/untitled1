@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/chenyl/CLionProjects/untitled1/detector.cpp" "/home/chenyl/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/detector.cpp.o"
   "/home/chenyl/CLionProjects/untitled1/main.cpp" "/home/chenyl/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -23,6 +24,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
   "/home/chenyl/opencv/build"
   "/home/chenyl/opencv/opencv-4.5.3/include"
   "/home/chenyl/opencv/opencv-4.5.3/modules/core/include"

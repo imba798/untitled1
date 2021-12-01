@@ -86,6 +86,10 @@ std::vector<torch::Tensor> non_max_suppression(torch::Tensor preds, float score_
 int main()
 {
     // Loading  Module
+    torch::DeviceType device_type;
+    device_type = torch::kCUDA;
+    torch::Device device0(device_type, 0);
+
     torch::jit::script::Module module = torch::jit::load("/home/chenyl/CLionProjects/untitled1/yolov5m.torchscript.pt");
 
     std::vector<std::string> classnames;
@@ -108,7 +112,7 @@ int main()
             std::cout << "Read frame failed!" << std::endl;
             break;
         }
-
+        std::cout << frame.size<< std::endl;
         // Preparing input tensor
         cv::resize(frame, img, cv::Size(640, 384));
         cv::cvtColor(img, img, cv::COLOR_BGR2RGB);
@@ -117,6 +121,7 @@ int main()
         imgTensor = imgTensor.toType(torch::kFloat);
         imgTensor = imgTensor.div(255);
         imgTensor = imgTensor.unsqueeze(0);
+        imgTensor = imgTensor.to(device0);
 
         // preds: [?, 15120, 9]
         torch::Tensor preds = module.forward({imgTensor}).toTuple()->elements()[0].toTensor();

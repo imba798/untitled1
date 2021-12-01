@@ -129,6 +129,30 @@ untitled1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/build
 .PHONY : untitled1/fast
 
+detector.o: detector.cpp.o
+.PHONY : detector.o
+
+# target to build an object file
+detector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/detector.cpp.o
+.PHONY : detector.cpp.o
+
+detector.i: detector.cpp.i
+.PHONY : detector.i
+
+# target to preprocess a source file
+detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/detector.cpp.i
+.PHONY : detector.cpp.i
+
+detector.s: detector.cpp.s
+.PHONY : detector.s
+
+# target to generate assembly for a file
+detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/detector.cpp.s
+.PHONY : detector.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled1"
+	@echo "... detector.o"
+	@echo "... detector.i"
+	@echo "... detector.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

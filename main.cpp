@@ -8,31 +8,44 @@
 //#include <opencv2/tracking/tracking_legacy.hpp>
 #include <unistd.h>
 
+#include "detector.h"
+#include "cxxopts.hpp"
 
 //using namespace  cv;
 //using namespace std;
 
 cv::Mat frame;
+cv::Mat yolo_frame;
 int finished = 0;
+int game_over= 0;
+int yolo_is_working = 0 ;
+Detector detector = Detector("/home/chenyl/CLionProjects/untitled1/yolov5m.torchscript.pt", torch::kCUDA);
 
 void show_img()
 {
     cv::namedWindow("output");
-    static double timer = (double)cv::getTickCount();
     while (1){
-
         if (finished == 1){
-            float fps = cv::getTickFrequency() / ((double)cv::getTickCount() - timer);
-            putText(frame, "FPS : " + std::to_string(int(fps)), cv::Point(400,50), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(150,170,50), 2);
             imshow("Tracking", frame);
-            int k = cv::waitKey(100);
-            timer = (double)cv::getTickCount();
+
+            int k = cv::waitKey(1);
             if(k == 27)
-            {
+            {   game_over= 1;
                 break;
             }
         }
+    }
+}
 
+void yolo_job()
+{
+    while(1){
+        yolo_is_working = 1;
+        auto results = detector.Run(yolo_frame, 0.5f, 0.5f);
+        yolo_is_working = 0;
+        if (game_over == 1){
+            break;
+        }
 
     }
 
@@ -54,12 +67,25 @@ int main() {
 
 
     cv::VideoCapture capture;
+    torch::DeviceType device_type;
+
+
 
     frame = capture.open("/home/chenyl/CLionProjects/untitled1/output_test_1122.avi");
     if(!capture.isOpened()){
         printf("can not open ...\n");
         return -1;
     }
+    capture.read(frame);
+    std::cout << "Run once on empty image" << std::endl;
+    auto temp_img = cv::Mat::ones(frame.rows, frame.cols, CV_32FC3);
+    detector.Run(temp_img, 0.5f, 0.5f);
+    std::cout << "Run once twice empty image" << std::endl;
+    auto temp_img2 = cv::Mat::ones(frame.rows, frame.cols, CV_32FC3);
+    detector.Run(temp_img, 0.5f, 0.5f);
+
+
+    yolo_frame = frame.clone();
 
 
     bool ok = capture.read(frame);
@@ -67,9 +93,14 @@ int main() {
     int start = 0;
     cv::Rect bbox;
     std::thread th1(show_img);
+    std::thread th2(yolo_job);
     th1.detach();
+    th2.detach();
     while (capture.read(frame)){
         finished = 0;
+        if (yolo_is_working== 0){
+            yolo_frame = frame.clone();
+        }
         double timer = (double)cv::getTickCount();
         usleep(5000);
 //        if (start == 1){
@@ -102,6 +133,8 @@ int main() {
         float fps = cv::getTickFrequency() / ((double)cv::getTickCount() - timer);
         putText(frame, "FPS : " + std::to_string(int(fps)), cv::Point(100,50), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(50,170,50), 2);
         finished = 1;
+        if (game_over == 1){break;
+        }
     }
     capture.release();
     return 0;

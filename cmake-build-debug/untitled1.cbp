@@ -49,6 +49,7 @@
 					<Add option="-DUSE_RPC"/>
 					<Add option="-DUSE_TENSORPIPE"/>
 					<Add option="-DUSE_C10D_NCCL"/>
+					<Add directory="/home/chenyl/CLionProjects/untitled1/include"/>
 					<Add directory="/home/chenyl/opencv/build"/>
 					<Add directory="/home/chenyl/opencv/opencv-4.5.3/include"/>
 					<Add directory="/home/chenyl/opencv/opencv-4.5.3/modules/core/include"/>
@@ -136,6 +137,7 @@
 					<Add option="-DUSE_RPC"/>
 					<Add option="-DUSE_TENSORPIPE"/>
 					<Add option="-DUSE_C10D_NCCL"/>
+					<Add directory="/home/chenyl/CLionProjects/untitled1/include"/>
 					<Add directory="/home/chenyl/opencv/build"/>
 					<Add directory="/home/chenyl/opencv/opencv-4.5.3/include"/>
 					<Add directory="/home/chenyl/opencv/opencv-4.5.3/modules/core/include"/>
@@ -212,6 +214,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/chenyl/CLionProjects/untitled1/detector.cpp">
+			<Option target="untitled1"/>
+		</Unit>
 		<Unit filename="/home/chenyl/CLionProjects/untitled1/main.cpp">
 			<Option target="untitled1"/>
 		</Unit>

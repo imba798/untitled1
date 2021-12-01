@@ -5,8 +5,12 @@ project(untitled1)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+file(GLOB SOURCE_FILES *.cpp)
+
 #add_executable(untitled1 test_yolo.cpp)
-add_executable(untitled1 main.cpp)
+add_executable(untitled1 main.cpp detector.cpp)
 #add_executable(untitled1 version.cpp)
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=1")
