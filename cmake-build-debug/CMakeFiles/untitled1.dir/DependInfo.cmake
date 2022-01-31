@@ -25,6 +25,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
+  "/home/chenyl/Downloads/package/samples/_libs"
+  "../../../_libs/xiAPI"
+  "../../../_libs/xiAPIplusOpenCV"
+  "../$(OPENCV_DIR)/../../include"
   "/home/chenyl/opencv/build"
   "/home/chenyl/opencv/opencv-4.5.3/include"
   "/home/chenyl/opencv/opencv-4.5.3/modules/core/include"

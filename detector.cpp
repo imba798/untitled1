@@ -57,7 +57,7 @@ Detector::Run(const cv::Mat& img, float conf_threshold, float iou_threshold) {
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
     // It should be known that it takes longer time at first time
-    std::cout << "pre-process takes : " << duration.count() << " ms" << std::endl;
+//    std::cout << "pre-process takes : " << duration.count() << " ms" << std::endl;
 
     /*** Inference ***/
     // TODO: add synchronize point
@@ -70,7 +70,7 @@ Detector::Run(const cv::Mat& img, float conf_threshold, float iou_threshold) {
     end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
     // It should be known that it takes longer time at first time
-    std::cout << "inference takes : " << duration.count() << " ms" << std::endl;
+//    std::cout << "inference takes : " << duration.count() << " ms" << std::endl;
 
     /*** Post-process ***/
 
@@ -84,10 +84,7 @@ Detector::Run(const cv::Mat& img, float conf_threshold, float iou_threshold) {
     end = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
     // It should be known that it takes longer time at first time
-    std::cout << "post-process takes : " << duration.count() << " ms" << std::endl;
-//    std::cout<<result<<std::endl;
-//    stream = at::cuda::getCurrentCUDAStream();
-//    AT_CUDA_CHECK(cudaStreamSynchronize(stream));
+//    std::cout << "post-process takes : " << duration.count() << " ms" << std::endl;
     return result;
 }
 

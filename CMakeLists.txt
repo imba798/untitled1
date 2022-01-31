@@ -1,17 +1,33 @@
 cmake_minimum_required(VERSION 3.20)
 project(untitled1)
 
+#add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
+set(-D_GLIBCXX_USE_CXX11_ABI 0)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
+#list(APPEND SOURCES
+#        main.cpp
+#        /home/chenyl/Downloads/package/samples/_libs/xiAPIplusOpenCV/xiApiPlusOcv
+#        )
+
+include_directories(/home/chenyl/Downloads/package/samples/_libs)
+
+include(/home/chenyl/Downloads/package/samples/_libs/_cmake/add_xiapi.cmake)
+include(/home/chenyl/Downloads/package/samples/_libs/_cmake/add_opencv.cmake)
+#include(/home/chenyl/Downloads/package/samples/_libs/_cmake/add_executable.cmake)
+
+
 file(GLOB SOURCE_FILES *.cpp)
 
 #add_executable(untitled1 test_yolo.cpp)
 add_executable(untitled1 main.cpp detector.cpp)
 #add_executable(untitled1 version.cpp)
+#add_executable(untitled1 testfile.cpp)
+#add_executable(untitled1 test_cam.cpp detector.cpp include/xiApiPlusOcv.cpp)
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=1")
 #add_definitions(-D_GLIBCXX_USE_CXX11_ABI=1)
